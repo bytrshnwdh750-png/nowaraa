@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e83e7d">
+<title>نواره ❤️ رسالة من القلب</title>
+
+<style>
+:root {
+  --pink: #ec3d83;
+  --deep: #a71959;
+  --bg: #fff0f5;
+  --ink: #751544;
+  --card: #ffffffdf;
+  --line: #ffc0d5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.8;
+  overflow-x: hidden;
+  transition: background .3s, color .3s;
+}
+
+body.night {
+  --bg: #241321;
+  --ink: #ffe2ef;
+  --card: #392036ed;
+  --line: #7d3c60;
+}
+
+button, a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 5%;
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e83e7d22;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--pink);
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--ink);
+}
+
+nav a:hover {
+  color: var(--pink);
+}
+
+.tools {
+  display: flex;
+  gap: 7px;
+}
+
+.icon {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--pink);
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  font-size: 17px;
+}
+
+.hero {
+  min-height: 500px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 70px 20px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 20%, #ffbdd8, transparent 42%),
+    radial-gradient(ellipse at 85% 80%, #ff9fc5, transparent 42%),
+    linear-gradient(135deg, #fff1f7, #ffc5dc, #fff5f9);
+}
+
+body.night .hero {
+  background: linear-gradient(135deg, #241321, #69264b, #432039);
+}
+
+.hero:before,
+.hero:after {
+  content: "♡";
+  position: absolute;
+  font-size: clamp(160px, 27vw, 330px);
+  color: #ffffff55;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero:before {
+  left: 3%;
+  top: -45px;
+  transform: rotate(-18deg);
+}
+
+.hero:after {
+  right: 4%;
+  bottom: -120px;
+}
+
+.inner {
+  position: relative;
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid #fff9;
+  border-radius: 99px;
+  background: #ffffff65;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: clamp(55px, 10vw, 100px);
+  line-height: 1.2;
+  color: var(--pink);
+  text-shadow: 0 8px 25px #d91f7025;
+}
+
+.hero h2 {
+  font-size: clamp(20px, 4vw, 30px);
+  margin: 12px 0;
+}
+
+.hero p {
+  line-height: 2.2;
+  margin: 0 auto 22px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 99px;
+  padding: 12px 25px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff72a9, #d91f70);
+  box-shadow: 0 10px 25px #d91f7030;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn.alt {
+  background: var(--card);
+  color: var(--pink);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.music {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.music label {
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 6px 14px;
+  background: var(--card);
+  color: var(--pink);
+  font-size: 13px;
+}
+
+.music input {
+  display: none;
+}
+
+#musicName {
+  font-size: 12px;
+  opacity: .8;
+}
+
+section {
+  padding: 60px clamp(18px, 7vw, 95px);
+  text-align: center;
+}
+
+.head {
+  margin-bottom: 27px;
+}
+
+.title {
+  font-size: clamp(27px, 4vw, 38px);
+  color: var(--pink);
+}
+
+.sub {
+  opacity: .8;
+  margin-top: 5px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 25px 20px;
+  box-shadow: 0 15px 45px #a61d5712;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.symbol {
+  display: block;
+  font-size: 34px;
+  color: var(--pink);
+}
+
+.card h3 {
+  color: var(--pink);
+  margin: 5px 0;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 2;
+}
+
+.gallery {
+  background: linear-gradient(180deg, #ffe7f1aa, #fff8fb88);
+}
+
+body.night .gallery {
+  background: #2e192a;
+}
+
+/* معرض الصور الثابتة */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.photo-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: 0 15px 35px #a61d5712;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px #a61d5720;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background: var(--line);
+}
+
+.photo-caption {
+  padding: 14px 10px 18px;
+  color: var(--pink);
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.surprise {
+  background:
+    radial-gradient(ellipse at 20% 50%, #ffbad4, transparent 42%),
+    linear-gradient(135deg, #ffe8f1, #ffd0e2, #fff1f7);
+}
+
+body.night .surprise {
+  background: linear-gradient(135deg, #402038, #51223e);
+}
+
+.surprise-row {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+}
+
+.gift {
+  font-size: clamp(90px, 15vw, 150px);
+  animation: bob 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 12px 12px #b31b5930);
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.note {
+  display: none;
+  max-width: 600px;
+  margin: 25px auto 0;
+  padding: 25px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 15px 45px #a61d5717;
+}
+
+.note.show {
+  display: block;
+  animation: pop .3s;
+}
+
+.note h3 {
+  color: var(--pink);
+  margin-bottom: 8px;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 32px 15px;
+  background: linear-gradient(135deg, #741641, #c32668);
+  color: white;
+}
+
+footer strong {
+  font-size: 27px;
+}
+
+.footerlinks {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footerlinks a {
+  color: white;
+  text-decoration: none;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  background: #68143e;
+  color: white;
+  padding: 9px 18px;
+  border-radius: 99px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s;
+  z-index: 30;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.heart {
+  position: fixed;
+  bottom: -35px;
+  z-index: 25;
+  pointer-events: none;
+  color: #e83e7d;
+  animation: rise linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .top {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .tools {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .photo-card img {
+    height: 200px;
+  }
+
+  .surprise-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .gift {
+    font-size: 90px;
+  }
+
+  section {
+    padding: 45px 5%;
+  }
+}
+
+@media (max-width: 390px) {
+  .photos {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-card img {
+    height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top">
+  <div class="logo">♡ نواره</div>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#messages">كلام من القلب 💗</a>
+    <a href="#gallery">معرض الصور 📸</a>
+    <a href="#surprise">المفاجأة 🎁</a>
+  </nav>
+
+  <div class="tools">
+    <button class="icon" id="theme" title="تغيير المظهر">🌙</button>
+    <button class="icon" id="hearts" title="تشغيل أو إيقاف القلوب">💞</button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="inner">
+    <div class="eyebrow">✦ صفحة معمولة بكل حب ✦</div>
+
+    <h1>نواره ♡</h1>
+    <h2>إنتِ أجمل حاجة حصلت في حياتي</h2>
+
+    <p>
+      وجودك في حياتي مش مجرد صدفة…<br>
+      إنتِ كل حاجة حلوة، وكل لحظة سعيدة،<br>
+      وكل سبب بيخلّي قلبي ينبض بالفرحة. 💗
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="#messages">رسالة ليكي 💌</a>
+      <a class="btn alt" href="#gallery">شوفي ذكرياتنا 📸</a>
+    </div>
+
+    <div class="music">
+      <label for="musicFile">🎵 اختار أغنية من جهازك</label>
+      <input id="musicFile" type="file" accept="audio/*">
+      <span id="musicName">مفيش أغنية مختارة</span>
+      <audio id="audio" controls hidden></audio>
+    </div>
+  </div>
+</section>
+
+<section id="messages">
+  <div class="head">
+    <h2 class="title">♥ كلام من القلب ♥</h2>
+    <p class="sub">بعض الكلمات اللي دايمًا عايز أقولها ليكي</p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <span class="symbol">✿</span>
+      <h3>إنتِ مميزة</h3>
+      <p>معاكي أبسط لحظة ممكن تبقى أجمل ذكرى، ووجودك بيفرق أكتر مما تتخيلي.</p>
+    </article>
+
+    <article class="card">
+      <span class="symbol">♡</span>
+      <h3>من قلبي</h3>
+      <p>أجمل حاجة في يومي هي اللحظات اللي بتخليني أبتسم لما أفتكرك.</p>
+    </article>
+
+    <article class="card">
+      <span class="symbol">❀</span>
+      <h3>أمنية حلوة</h3>
+      <p>بتمنالك أيام مليانة فرحة وراحة بال، وضحكة جميلة ما تفارقش وشك أبدًا.</p>
+    </article>
+
+    <article class="card">
+      <span class="symbol">☆</span>
+      <h3>إنتِ حكاية</h3>
+      <p>في ناس وجودها بيخلّي الدنيا ألطف، وإنتِ من الناس اللي وجودهم له معنى جميل.</p>
+    </article>
+
+    <article class="card">
+      <span class="symbol">☼</span>
+      <h3>كل يوم</h3>
+      <p>أتمنى كل يوم جديد يجيبلك سبب تفرحي عشانه، وحاجة حلوة تستاهليها.</p>
+    </article>
+
+    <article class="card">
+      <span class="symbol">💌</span>
+      <h3>رسالة صغيرة</h3>
+      <p>لو اليوم كان صعب، افتكري إنك تستاهلي كل خير، وإن بكرة ممكن يكون أجمل.</p>
+    </article>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="head">
+    <h2 class="title">📸 معرض الصور</h2>
+    <p class="sub">أجمل الذكريات والصور الحلوة ❤️</p>
+  </div>
+
+  <div class="photos">
+
+    <article class="photo-card">
+      <img src="images/photo1.jpeg" alt="عيالناااا" loading="eager">
+      <h3 class="photo-caption">عيالناااا</h3>
+    </article>
+
+    <article class="photo-card">
+      <img src="images/photo2.jpeg" alt="لما اسكندريه نورتتت 💗💗" loading="eager">
+      <h3 class="photo-caption">لما اسكندريه نورتتت 💗💗</h3>
+    </article>
+
+    <article class="photo-card">
+      <img src="images/photo3.jpeg" alt="عسووووله فشخخخ 😍😍" loading="eager">
+      <h3 class="photo-caption">عسووووله فشخخخ 😍😍</h3>
+    </article>
+
+    <article class="photo-card">
+      <img src="images/photo4.jpeg" alt="Perfectooo😘😘😘😘" loading="eager">
+      <h3 class="photo-caption">Perfectooo😘😘😘😘</h3>
+    </article>
+
+  </div>
+</section>
+
+<section class="surprise" id="surprise">
+  <div class="surprise-row">
+    <div class="gift">🎁</div>
+
+    <div>
+      <h2 class="title">المفاجأة السرية 💌</h2>
+      <p class="sub" style="margin:12px 0 22px">
+        في رسالة صغيرة مستنياكي… اضغطي واكتشفيها ✨
+      </p>
+      <button class="btn" id="openNote">افتحي هديتك يا نواره 🎀</button>
+    </div>
+  </div>
+
+  <article class="note" id="note">
+    <h3>رسالة مخصوص ليكي يا نواره 💗</h3>
+
+    <p>
+      يا نواره، ❤️<br>
+      يمكن الكلام مهما كان جميل مش هيقدر يوصف كل اللي في القلب،
+      بس حبيت أعملك المكان ده عشان أقولك إنك شخص غالي،
+      وإن وجودك يستاهل يتحتفل بيه.<br>
+      أتمنى الفرحة تفضل في قلبك، والابتسامة تنور أيامك،
+      وكل أحلامك الجميلة تقرب منك يوم بعد يوم. 🌹
+    </p>
+
+    <button class="btn alt" id="closeNote" style="margin-top:16px">
+      اقفلي الرسالة 💕
+    </button>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <strong>♡ نواره ♡</strong>
+  <p>وجودك حكاية جميلة… وكل يوم فيها يستاهل يتعاش.</p>
+  <p>اتعمل بكل حب 💗</p>
+
+  <div class="footerlinks">
+    <a href="#home">للأعلى ↑</a>
+    <a href="#messages">رسائلنا</a>
+    <a href="#gallery">الذكريات</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const toast = document.getElementById("toast");
+let toastTimer;
+
+function msg(text) {
+  toast.textContent = text;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2300);
+}
+
+// الوضع الليلي
+document.getElementById("theme").onclick = function () {
+  document.body.classList.toggle("night");
+
+  this.textContent = document.body.classList.contains("night")
+    ? "☀️"
+    : "🌙";
+};
+
+// القلوب المتحركة
+let heartsOn = true;
+let timer;
+
+function floatHearts(count = 2) {
+  if (!heartsOn) return;
+
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("span");
+
+    heart.className = "heart";
+    heart.textContent = Math.random() > 0.5 ? "♥" : "♡";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+    document.body.append(heart);
+    heart.onanimationend = () => heart.remove();
+  }
+}
+
+function heartTimer() {
+  clearInterval(timer);
+
+  if (heartsOn) {
+    timer = setInterval(() => floatHearts(2), 1700);
+  }
+}
+
+heartTimer();
+
+document.getElementById("hearts").onclick = function () {
+  heartsOn = !heartsOn;
+  this.textContent = heartsOn ? "💞" : "🤍";
+
+  if (!heartsOn) {
+    document.querySelectorAll(".heart").forEach(h => h.remove());
+  }
+
+  heartTimer();
+  msg(heartsOn ? "القلوب رجعت تاني 💗" : "تم إيقاف القلوب المتحركة");
+};
+
+// المفاجأة
+const note = document.getElementById("note");
+const open = document.getElementById("openNote");
+
+open.onclick = () => {
+  note.classList.add("show");
+  open.textContent = "المفاجأة اتفتحت 💖";
+  floatHearts(16);
+
+  note.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+};
+
+document.getElementById("closeNote").onclick = () => {
+  note.classList.remove("show");
+  open.textContent = "افتحي هديتك يا نواره 🎀";
+  open.focus();
+};
+
+// اختيار أغنية من الجهاز
+let audioURL;
+
+const picker = document.getElementById("musicFile");
+const audio = document.getElementById("audio");
+
+picker.onchange = () => {
+  const file = picker.files && picker.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("audio/")) {
+    msg("اختار ملف صوتي");
+    return;
+  }
+
+  if (audioURL) {
+    URL.revokeObjectURL(audioURL);
+  }
+
+  audioURL = URL.createObjectURL(file);
+  audio.src = audioURL;
+  audio.hidden = false;
+
+  document.getElementById("musicName").textContent = file.name;
+
+  audio.play().catch(() => {
+    msg("اضغط تشغيل من مشغل الأغنية 🎵");
+  });
+};
+
+// إغلاق الرسالة بزر Escape
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    note.classList.remove("show");
+    open.focus();
+  }
+});
+</script>
+
+</body>
+</html>
